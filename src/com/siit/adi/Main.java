@@ -12,6 +12,11 @@ public class Main {
         calc.evaluateExpression();
         System.out.println("Result is: " + calc.compute() + " " + calc.getDesiredUnitOfMeasurement());
 
+        StatisticsRepo stats = new StatisticsRepo();
+
+        stats.measureRunTimeEvaluate();
+        stats.measureRunTimeCompute();
+
 
     }
 

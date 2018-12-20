@@ -2,6 +2,7 @@ package Test;
 
 import com.siit.adi.Calculator;
 import com.siit.adi.InputException;
+import com.siit.adi.UnitOfMeasurement;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -41,6 +42,23 @@ public class CalculatorTest {
         assertEquals(-10, testCalc.compute(), 0.00000000004);
 
     }
+
+    @Test
+    public void computeAllNegativeValues() {
+        testCalc = new Calculator("-10 mm + -10 cm - 2.1 dm", CM);
+
+        assertEquals(-32, testCalc.compute(), 0.00000000004);
+
+    }
+
+
+    @Test
+    public void getDesiredUnitOfMeasurementAsStringReturnsCorrectValue() {
+        String test = testCalc.getDesiredUnitOfMeasurement();
+        assertEquals("KM", test);
+
+    }
+
 
 }
 
